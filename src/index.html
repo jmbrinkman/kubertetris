@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="assets/css/blockrain.css">
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.css" />
+  <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-firestore.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="assets/js/blockrain.jquery.min.js"></script>
+  <script src="assets/js/firebase.config.min.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.js"></script>
+  <script type="text/javascript">
+  // FirebaseUI config.
+  var uiConfig = {
+    signInSuccessUrl: 'index.html',
+    signInOptions: [
+      // Leave the lines as is for the providers you want to offer your users.
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    ]
+  };
+
+  // Initialize the FirebaseUI Widget using Firebase.
+  var ui = new firebaseui.auth.AuthUI(firebase.auth());
+  // The start method will wait until the DOM is loaded.
+  ui.start('#firebaseui-auth-container', uiConfig);
+</script>
+</head>
+<body>
+  <div class="body">
+    <div class="blockrain-highscore-holder"></div>
+    <div id="firebaseui-auth-container"></div>
+    <center><div class="game"></div></center>
+  </div>
+
+<script>
+  firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    document.getElementById("firebaseui-auth-container").style.display = "none";
+    // User is signed in.
+    console.log(user)
+    $('.game').blockrain({
+    theme: 'custom'
+    });
+  }
+});
+</script>
+</body>
+</html>
