@@ -1,6 +1,5 @@
 var gulp = require('gulp'),
 fs = require('fs'),
-clean = require("gulp-clean"),
 uglify = require("gulp-uglify"),
 concat = require("gulp-concat"),
 header = require("gulp-header"),
@@ -62,11 +61,6 @@ gulp.task('audio', function () {
 gulp.task('readme', function () {
     return gulp.src(['./README.md'])
     .pipe(gulp.dest('./dist'));
-});
-
-gulp.task('clean', function () {
-    return gulp.src('./dist', {read: false})
-    .pipe(clean());
 });
 
 gulp.task('build', function(callback){
