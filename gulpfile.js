@@ -64,8 +64,7 @@ gulp.task('readme', function () {
 });
 
 gulp.task('build', function(callback){
-  runSequence('clean', 
-              'js','firebase','css', 'blocks', 'readme', 'html', 'images', 'audio', 
+  runSequence('js','firebase','css', 'blocks', 'readme', 'html', 'images', 'audio', 
               callback);
 });
 
