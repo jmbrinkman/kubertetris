@@ -13,8 +13,9 @@ steps:
 
 - task: Npm@1
   inputs:
-    command: 'install'
-    workingDir: '$(build.sourcesdirectory)'
+    command: 'custom'
+    customCommand: 'install gulp-cli'
+
 - task: Gulp@1
   inputs:
     gulpFile: 'gulpfile.js'
