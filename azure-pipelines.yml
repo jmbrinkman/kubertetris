@@ -10,10 +10,13 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: NodeTool@0
+
+- task: Npm@1
   inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
+    command: 'install'
+    workingDir: 'kubertetris'
 - task: Gulp@1
   inputs:
     gulpFile: 'gulpfile.js'
+    targets: 'build'
+    enableCodeCoverage: false
