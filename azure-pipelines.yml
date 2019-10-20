@@ -14,7 +14,7 @@ steps:
 - task: Npm@1
   inputs:
     command: 'custom'
-    customCommand: 'install gulp-cli'
+    customCommand: 'install -g gulp-cli'
 
 - task: Gulp@1
   inputs:
