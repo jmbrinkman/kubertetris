@@ -13,13 +13,7 @@ steps:
 
 - task: Npm@1
   inputs:
-    command: 'custom'
-    customCommand: 'install gulp-cli'
-
-- task: Npm@1
-  inputs:
-    command: 'custom'
-    customCommand: 'install --save-dev gulp'
+    command: 'install'
 
 - task: Gulp@1
   inputs:
