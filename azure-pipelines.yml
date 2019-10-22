@@ -25,3 +25,11 @@ steps:
     PathtoPublish: '$(System.DefaultWorkingDirectory)/dist'
     ArtifactName: 'dist'
     publishLocation: 'Container'
+
+- task: CopyToGoogleStorage@14
+  inputs:
+    bucketname: 'gs://kubertetris-green.gcp.thirdpartytools.net'
+    foldername: '/dist'
+    projectid: 'proven-script-222610'
+    clientemail: 'azure-devops@proven-script-222610.iam.gserviceaccount.com'
+    privatekey: '-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCbXlZB5gvzoiph\nsJssRFcfLoDkgk+e06H/B9kko5WNtg3iZma0F8Unds3J9jd2GKYHWzfwoh8XWu3s\nBSaH62S1sk7FMqstdiw6zpR1E8ZFe4r3/qUEL8D+oFkUC0La/I2TI+qilVn64Azb\nP7a5jms80su5BlasGIajbDjiqn53HK/hXEbr3qx9iLCP7WPSVjzkrLDlyZi1hX/Q\nbMTpgHX8nkMwujWSLNfRzhnFhorYPLkgfbbII5y91rR2xS5aI3FZbc7d3qkYe4Uf\nNfJUNW6vCgBcBDKZLqm4Jpug0x4QXFTT9zLF1XVoM5meDKQbs2OahUtV8Jdoh3xx\nz5JvI9BtAgMBAAECggEACKev22+YG9mH+IrbjL2T3Yn8Jn6h4SxTRRSSrUlVmUra\nftG13UjJCVfuF9buTlcKLLURVTIwKYoTC0ewK/iE0uBc0KcaxRIPswjzWTWhoRju\n7BNp7Y/xdYhziJEmB3Kej7imUf9K6hWqxwNHcmfIzonETTQusNs+6NdXBegkhQ25\notbrC+/ZdJMbMXJ9QluIy7KJigj4366gBIERZnCwsKXDN2SRGKY8ho+Fxiz2lQH6\nlwtCghH//dmtsuEdO8KelRkkCG/0x8dIP/F7HX/fRiM4K+c2vVbe70dz3ebjzIgh\nRhInivJfuPDDrqBlZD/f/7P0NJ/k+SmU6Rlr/WIK+wKBgQDSUS6/siq40flyib9P\nNR33/7l4637WMOrZd9iBkm2RZOSq2jajbbZ4uHIgSDF3n7OBjOAuHbtxDZf7jimZ\n9ns0QedynkdMps9gdUH3htGJkAJIPzhbdDaKhqAX1Di5czYWYf0K6e35w8jXR3Cp\nwaKcbkuteWGZqLZ46p0qQ8i5IwKBgQC9HbOYiDXtuhT6sUwl3+hbA0/+2O/gtLgH\nNYY73yYezfGJq/i4bM3M0Ut+/GvwmEUuY6DKc3dw5YxjuCHXewGPeAHhhQAGV6c1\nmww/x4M7SZsRhRL90vd4tzsN76JHe+3AcnYcJEZhPjd1AKWtPlxZ3EFiE/J2b2g/\neAcH5S+RLwKBgGEgsNBCvcwg3GxzBPDVfQOdC9C2IRtV9/96g3hDYWp2B8yHfhg3\ngL97nukdrgqqrEG2B4oEnR32wyufWcMKu5dEoFiklBToLHlFbbOchYRcB1HKMIK7\nxrxus9yNW6z5cg8gLbYuloJ0UnppObSMAkbwAO8aUWKfMbXh07dDGp21AoGBAKfV\nnje2WrX5uPirNHtAdYOgMvRnLqvrdo7fT5v+9GPOPZgCyR9TYGlvLWMrPdguKud6\nf45sXwoQjkFJfq8veTkMNg8g6961F64ZRgusUqjhL/+ibDJbckjtxDkf/JMYRu3O\nJ0feYZ+XibwKsP5JI8iUEmqqbTnysT/yk7rMCST9AoGAAdsRstXwAWjZDFS6gTbH\ncY92Ty8dl/wv4Z5oOWNf5kOSz4cRKg1r58RLwIVduPBUl6avm4fWQv4Ii6iu0i/m\nF8KGUSnLNHzUl7CDz/skLQzSStOczsxQ+/nRqyj+aBob1eR5020NaZOawAJ5DY8e\nYrq/V40NsQmCven2gFFLBf4=\n-----END PRIVATE KEY-----\n'
