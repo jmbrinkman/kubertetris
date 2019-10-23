@@ -40,9 +40,9 @@ steps:
       service_account_file = ./gcp_auth.json
       bucket_policy_only = true
       "@
-      $String >> rclone.conf
-      get-content rclone.conf |% {$_.replace("`n", "`r`n")} | out-file -filepath rclone.conf
+      Set-Content -Path 'rclone.conf' -Value $String
 
+     
 - task: Npm@1
   inputs:
     command: 'install'
