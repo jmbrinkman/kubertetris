@@ -11,22 +11,6 @@ pool:
 
 steps:
 
-- task: MagicChunks@2
-  inputs:
-    sourcePath: 'gcp_auth.json'
-    fileType: 'Json'
-    targetPathType: 'source'
-    transformationType: 'json'
-    transformations: |
-      {
-        "project_id": "$(gcp_project_id)",
-        "private_key_id": "$(gcp_private_key_id)",
-        "private_key": '$(gcp_private_key)',
-        "client_email": "$(gcp_client_email)",
-        "client_id": "$(gcp_client_id)",
-        "client_x509_cert_url": "$(gcp_client_x509_cert_url)"
-      }
-
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
@@ -42,6 +26,25 @@ steps:
       "@
       Set-Content -Path 'rclone.conf' -Value $String
 
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      $String = @"
+      {
+        "type": "service_account",  
+        "project_id": "$(gcp_project_id)",
+        "private_key_id": "$(gcp_private_key_id)",
+        "private_key": '$(gcp_private_key)',
+        "client_email": "$(gcp_client_email)",
+        "client_id": "$(gcp_client_id)",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_x509_cert_url": "$(gcp_client_x509_cert_url)"
+      }
+      "@
+      Set-Content -Path 'gcp_auth.json' -Value $String
      
 - task: Npm@1
   inputs:
