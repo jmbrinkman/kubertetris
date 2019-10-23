@@ -13,7 +13,7 @@ steps:
 
 - task: MagicChunks@2
   inputs:
-    sourcePath: 'rclone/gcp_auth.json'
+    sourcePath: 'gcp_auth.json'
     fileType: 'Json'
     targetPathType: 'source'
     transformationType: 'json'
