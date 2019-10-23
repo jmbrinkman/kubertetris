@@ -11,21 +11,6 @@ pool:
 
 steps:
 
-- task: Npm@1
-  inputs:
-    command: 'install'
-
-- task: Gulp@1
-  inputs:
-    gulpFile: 'gulpfile.js'
-    enableCodeCoverage: false
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)/dist'
-    ArtifactName: 'dist'
-    publishLocation: 'Container'
-
 - task: MagicChunks@2
   inputs:
     sourcePath: 'rclone/gcp_auth.json'
@@ -41,3 +26,34 @@ steps:
         "client_id": "$(gcp_client_id)",
         "client_x509_cert_url": "$(gcp_client_x509_cert_url)"
       }
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your PowerShell commands here.
+      
+      $String = @" 
+      [gcp]
+      type = google cloud storage
+      project_number = $(gcp_project_number)
+      service_account_file = ./gcp_auth.json
+      bucket_policy_only = true
+      "@
+      $String >> rclone.conf
+
+- task: Npm@1
+  inputs:
+    command: 'install'
+
+- task: Gulp@1
+  inputs:
+    gulpFile: 'gulpfile.js'
+    enableCodeCoverage: false
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/dist'
+    ArtifactName: 'dist'
+    publishLocation: 'Container'
+
