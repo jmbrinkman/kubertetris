@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
 
 steps:
 
@@ -19,3 +19,25 @@ steps:
   inputs:
     gulpFile: 'gulpfile.js'
     enableCodeCoverage: false
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/dist'
+    ArtifactName: 'dist'
+    publishLocation: 'Container'
+
+- task: MagicChunks@2
+  inputs:
+    sourcePath: 'rclone/gcp_auth.json'
+    fileType: 'Json'
+    targetPathType: 'source'
+    transformationType: 'json'
+    transformations: |
+      {
+        "project_id": "$(gcp_project_id)",
+        "private_key_id": "$(gcp_private_key_id)",
+        "private_key": "$(gcp_private_key)",
+        "client_email": "$(gcp_client_email)",
+        "client_id": "$(gcp_client_id)",
+        "client_x509_cert_url": "$(gcp_client_x509_cert_url)"
+      }
