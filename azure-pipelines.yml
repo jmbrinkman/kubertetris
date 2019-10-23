@@ -41,6 +41,7 @@ steps:
       bucket_policy_only = true
       "@
       $String >> rclone.conf
+      cat rclone.conf
 
 - task: Npm@1
   inputs:
