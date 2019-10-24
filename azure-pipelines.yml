@@ -16,7 +16,6 @@ steps:
     targetType: 'inline'
     script: |
       # Write your PowerShell commands here.
-      
       $String = @" 
       [gcp]
       type = google cloud storage
@@ -24,7 +23,7 @@ steps:
       service_account_file = _jmbrinkman.kubertetris/dist/gcp_auth.json
       bucket_policy_only = true
       "@
-      Set-Content -Path 'rclone/rclone.conf' -Value $String
+      Set-Content -Path 'rclone.conf' -Value $String
 
 - task: PowerShell@2
   inputs:
@@ -44,7 +43,7 @@ steps:
         "client_x509_cert_url": "$(gcp_client_x509_cert_url)"
       }
       "@
-      Set-Content -Path 'rclone/gcp_auth.json' -Value $String
+      Set-Content -Path 'gcp_auth.json' -Value $String
      
 - task: Npm@1
   inputs:
