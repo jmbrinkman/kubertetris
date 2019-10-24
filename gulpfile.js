@@ -43,7 +43,7 @@ gulp.task('blocks', function () {
     .pipe(gulp.dest('./dist/assets/blocks/custom'));
 });
 
-gulp.task('html', function () {
+gulp.task('rclone', function () {
     return gulp.src(['./rclone.conf','gcp_auth.json'])
     .pipe(gulp.dest('./dist/rclone'));
 });
