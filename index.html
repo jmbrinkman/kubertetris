@@ -46,9 +46,16 @@
 </script>
 <script type="text/javascript">
 var db = firebase.firestore();
-const highScores = db.collection('highscore')
-let scores = highScores.get()
-console.log(scores)
+let highScores = db.collection('highscore')
+let allScores = highScores.get()
+  .then(snapshot => {
+    snapshot.forEach(doc => {
+      console.log(doc.id, '=>', doc.data());
+    });
+  })
+  .catch(err => {
+    console.log('Error getting documents', err);
+  });
  </script>
 </body>
 </html>
