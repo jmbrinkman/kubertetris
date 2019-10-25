@@ -15,7 +15,9 @@
 </head>
 <body>
   <div class="body">
-    <div class="blockrain-highscore-holder"></div>
+    <div class="blockrain-highscore-holder">
+      <span class='nickName'></span>
+    </div>
     <div id="firebaseui-auth-container"></div>
     <center><div class="game"></div></center>
   </div>
@@ -40,7 +42,7 @@ let top5Scores = highScores.orderBy('score').limit(5).get()
     }  
     snapshot.forEach(doc => { 
       var nickName = doc.get("nickName");  
-      console.log(nickName);
+      document.querySelector('.blockrain-highscore-holder .nickName').innerHTML = nickName;
     });
   })
   .catch(err => {
