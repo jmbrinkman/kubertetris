@@ -33,7 +33,7 @@
 var db = firebase.firestore();
 let highScores = db.collection('highscores')
 let top5Scores = highScores.orderBy('score').limit(5);
-console.log(top5Score)
+console.log(top5Scores)
 </script>
 </body>
 </html>
