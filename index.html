@@ -38,8 +38,6 @@
   firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     document.getElementById("firebaseui-auth-container").style.display = "none";
-    // User is signed in.
-    console.log(user)
     $('.game').blockrain({
     theme: 'custom'
     });
@@ -48,10 +46,9 @@
 </script>
 <script type="text/javascript">
 var db = firebase.firestore();
-const highScores = db.collections('highscore')
+const highScores = db.collection('highscore')
 let scores = highScores.get()
 console.log(scores)
-
  </script>
 </body>
 </html>
