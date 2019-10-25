@@ -31,8 +31,9 @@
 </script>
 <script type="text/javascript">
 var db = firebase.firestore();
-let highScores = db.collection('highscore')
-let allScores = highScores.orderBy('score').limit(5);
- </script>
+let highScores = db.collection('highscores')
+let top5Scores = highScores.orderBy('score').limit(5);
+console.log(top5Score)
+</script>
 </body>
 </html>
