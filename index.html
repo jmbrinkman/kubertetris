@@ -31,16 +31,16 @@
 </script>
 <script type="text/javascript">
 var db = firebase.firestore();
-let highScores = db.collection('highscores')
-let top5Scores = highScores.orderBy('Score').limit(5).get()
+let highScores = db.collection('highScores')
+let top5Scores = highScores.orderBy('score').limit(5).get()
 .then(snapshot => {
     if (snapshot.empty) {
       console.log('No matching documents.');
       return;
     }  
     snapshot.forEach(doc => { 
-      var NickName = doc.get("Nickname");  
-      console.log(NickName);
+      var nickName = doc.get("nickName");  
+      console.log(nickName);
     });
   })
   .catch(err => {

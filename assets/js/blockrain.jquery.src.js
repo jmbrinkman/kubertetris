@@ -72,9 +72,9 @@
       // Add a new document in collection "highscore" with the score details
       var db = firebase.firestore();
       this.options.onGameOver.call(this.element, this._filled.score);
-      db.collection("highscore").add({
-        Nickname: username,
-        Score: this._filled.score
+      db.collection("highScores").add({
+        nickName: nickName,
+        score: this._filled.score
         })
         .then(function(docRef) {
           console.log("Document written with ID: ", docRef.id);
@@ -1267,15 +1267,15 @@
       game._$start = $(
         '<div class="blockrain-start-holder" style="position:absolute;">'+
           '<div class="blockrain-start">'+
-            '<div class="blockrain-start-msg">'+ this.options.playText +'</div>'+
-            '<div class="blockrain-username-box">'+ '<input type="text" id="user" />'+'</div>'+
+            '<div class="blockrain-start-msg">'+ this.options.playText +'</div>'+'<br>'+
+            '<div class="blockrain-nickname-box">'+ '<input type="text" id="nickname" />'+'</div>'+
             '<a class="blockrain-btn blockrain-start-btn">'+ this.options.playButtonText +'</a>'+
           '</div>'+
         '</div>').hide();
       game._$gameholder.append(game._$start);
 
       game._$start.find('.blockrain-start-btn').click(function(event){
-        username = document.getElementById("user").value
+        nickName = document.getElementById("nickname").value
         event.preventDefault();
         backgroundaudio.play();
         game.start();
