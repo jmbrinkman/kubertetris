@@ -32,7 +32,7 @@
 <script type="text/javascript">
 var db = firebase.firestore();
 let highScores = db.collection('highscore')
-let allScores = highScores.orderBy('score').limit(5);
+let allScores = highScores.orderBy('score').limit(5)
   .then(snapshot => {
     snapshot.forEach(doc => {
       console.log(doc.data());
