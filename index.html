@@ -46,5 +46,12 @@
   }
 });
 </script>
+<script type="text/javascript">
+var db = firebase.firestore();
+const highScores = db.collections('highscore')
+let scores = highScores.get()
+console.log(scores)
+
+ </script>
 </body>
 </html>
