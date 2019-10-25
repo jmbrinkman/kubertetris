@@ -32,8 +32,20 @@
 <script type="text/javascript">
 var db = firebase.firestore();
 let highScores = db.collection('highscores')
-let top5Scores = highScores.orderBy('score').limit(5);
-console.log(top5Scores)
+let top5Scores = highScores.orderBy('score').limit(5).get()
+.then(snapshot => {
+    if (snapshot.empty) {
+      console.log('No matching documents.');
+      return;
+    }  
+
+    snapshot.forEach(doc => {
+      console.log(doc.data());
+    });
+  })
+  .catch(err => {
+    console.log('Error getting documents', err);
+  });
 </script>
 </body>
 </html>
