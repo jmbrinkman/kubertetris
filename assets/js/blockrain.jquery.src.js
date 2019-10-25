@@ -73,8 +73,8 @@
       var db = firebase.firestore();
       this.options.onGameOver.call(this.element, this._filled.score);
       db.collection("highscore").add({
-        first: username,
-        score: this._filled.score
+        Nickname: username,
+        Score: this._filled.score
         })
         .then(function(docRef) {
           console.log("Document written with ID: ", docRef.id);
