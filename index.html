@@ -11,21 +11,7 @@
   <script src="assets/js/blockrain.jquery.min.js"></script>
   <script src="assets/js/firebase.config.min.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.js"></script>
-  <script type="text/javascript">
-  // FirebaseUI config.
-  var uiConfig = {
-    signInSuccessUrl: 'index.html',
-    signInOptions: [
-      // Leave the lines as is for the providers you want to offer your users.
-      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    ]
-  };
-
-  // Initialize the FirebaseUI Widget using Firebase.
-  var ui = new firebaseui.auth.AuthUI(firebase.auth());
-  // The start method will wait until the DOM is loaded.
-  ui.start('#firebaseui-auth-container', uiConfig);
-</script>
+  <script src="assets/js/firebaseui.config.min.js"></script>
 </head>
 <body>
   <div class="body">
@@ -33,7 +19,6 @@
     <div id="firebaseui-auth-container"></div>
     <center><div class="game"></div></center>
   </div>
-
 <script>
   firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -47,10 +32,10 @@
 <script type="text/javascript">
 var db = firebase.firestore();
 let highScores = db.collection('highscore')
-let allScores = highScores.get()
+let allScores = highScores.orderBy('score').limit(5);
   .then(snapshot => {
     snapshot.forEach(doc => {
-      console.log(doc.id, '=>', doc.data());
+      console.log(doc.data());
     });
   })
   .catch(err => {

@@ -33,6 +33,15 @@ gulp.task('firebase', function () {
     .pipe(gulp.dest('./dist/assets/js'));
 });
 
+gulp.task('firebaseui', function () {
+    return gulp.src(['./assets/js/firebaseui.config.js'])
+    .pipe(concat('firebaseui.config.js'))
+    .pipe(gulp.dest('./dist/assets/js'))
+    .pipe(uglify({preserveComments:'none'}))
+    .pipe(concat('firebaseui.config.min.js'))
+    .pipe(gulp.dest('./dist/assets/js'));
+});
+
 gulp.task('css', function () {
     return gulp.src(['./assets/css/blockrain.css'])
     .pipe(gulp.dest('./dist/assets/css/'));
@@ -69,7 +78,7 @@ gulp.task('readme', function () {
 });
 
 gulp.task('build', function(callback){
-  runSequence('js','firebase','css', 'blocks', 'readme', 'html', 'images', 'audio', 'rclone' , 
+  runSequence('js','firebase','firebaseui','css', 'blocks', 'readme', 'html', 'images', 'audio', 'rclone' , 
               callback);
 });
 
