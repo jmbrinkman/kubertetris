@@ -38,8 +38,9 @@ let top5Scores = highScores.orderBy('Score').limit(5).get()
       console.log('No matching documents.');
       return;
     }  
-    snapshot.forEach(doc => {
-      console.log(doc.data.NickName);
+    snapshot.forEach(doc => { 
+      var NickName = doc.get("NickName");  
+      console.log(NickName);
     });
   })
   .catch(err => {
