@@ -15,7 +15,7 @@
 
   
   "use strict";
-  var username 
+  var nickName
   $.widget('aerolab.blockrain', {
 
     options: {
@@ -1268,6 +1268,7 @@
         '<div class="blockrain-start-holder" style="position:absolute;">'+
           '<div class="blockrain-start">'+
             '<div class="blockrain-start-msg">'+ this.options.playText +'</div>'+'<br>'+
+            // Think about this div, make it prettier
             '<div class="blockrain-nickname-box">'+ '<input type="text" id="nickname" />'+'</div>'+
             '<a class="blockrain-btn blockrain-start-btn">'+ this.options.playButtonText +'</a>'+
           '</div>'+
@@ -1285,8 +1286,8 @@
       game._$gameover = $(
         '<div class="blockrain-game-over-holder" style="position:absolute;">'+
           '<div class="blockrain-game-over">'+
-            '<div class="blockrain-game-over-msg">'+ this.options.gameOverText +'</div>'+
-            '<div class="blockrain-username-box">'+ '<input type="text" id="user" />'+'</div>'+
+            '<div class="blockrain-game-over-msg">'+ this.options.gameOverText +'</div>'+'<br>'+
+            '<div class="blockrain-nickname-box">'+ '<input type="text" id="nickname" />'+'</div>'+
             '<a class="blockrain-btn blockrain-game-over-btn">'+ this.options.restartButtonText +'</a>'+
           '</div>'+
         '</div>').hide();
