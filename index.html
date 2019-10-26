@@ -42,7 +42,7 @@ let top5Scores = highScores.orderBy('score').limit(5).get()
       return;
     }  
     snapshot.forEach(doc => { 
-      myMap.set(doc.get(nickName),doc.get(score));
+      myMap.set(doc.get("nickName"),doc.get("score"));
       console.log(myMap);
       //document.querySelector('.blockrain-highscore-holder .nickName').innerHTML = nickName;
     });
