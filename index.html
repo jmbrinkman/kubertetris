@@ -41,7 +41,7 @@ let top5Scores = highScores.orderBy('score').limit(5).get()
       return;
     }  
     snapshot.forEach(doc => { 
-      var data = doc.getdata();
+      var data = doc.data();
       console.log(data);
       document.querySelector('.blockrain-highscore-holder .nickName').innerHTML = nickName;
     });
