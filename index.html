@@ -33,6 +33,7 @@
 </script>
 <script type="text/javascript">
 var db = firebase.firestore();
+var myMap = new Map();
 let highScores = db.collection('highScores')
 let top5Scores = highScores.orderBy('score').limit(5).get()
 .then(snapshot => {
@@ -41,9 +42,9 @@ let top5Scores = highScores.orderBy('score').limit(5).get()
       return;
     }  
     snapshot.forEach(doc => { 
-      var data = doc.data();
-      console.log(data);
-      document.querySelector('.blockrain-highscore-holder .nickName').innerHTML = nickName;
+      myMap.set(doc.get(nickName),doc.get(score));
+      console.log(myMap);
+      //document.querySelector('.blockrain-highscore-holder .nickName').innerHTML = nickName;
     });
   })
   .catch(err => {
