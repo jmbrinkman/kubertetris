@@ -35,7 +35,7 @@
 var db = firebase.firestore();
 var myMap = new Map();
 let highScores = db.collection('highScores')
-let top5Scores = highScores.orderBy('score').limit(5).get()
+let top5Scores = highScores.orderBy('score','desc').limit(5).get()
 .then(snapshot => {
     if (snapshot.empty) {
       console.log('No matching documents.');
@@ -44,12 +44,12 @@ let top5Scores = highScores.orderBy('score').limit(5).get()
     snapshot.forEach(doc => { 
       myMap.set(doc.get("nickName"),doc.get("score"));
       console.log(myMap);
-      //document.querySelector('.blockrain-highscore-holder .nickName').innerHTML = nickName;
     });
   })
   .catch(err => {
     console.log('Error getting documents', err);
   });
+  document.querySelector('.blockrain-highscore-holder .nickName').innerHTML = myMap;
 </script>
 </body>
 </html>
