@@ -46,7 +46,7 @@ let top5Scores = highScores.orderBy('score','desc').limit(5).get()
       highScoretable += "<tr><td>" + doc.get("nickName") +" "+ doc.get("score") + "</td></tr>";
     });
     highScoretable  += "</table>";
-  });
+  })
 .catch(err => {
     console.log('Error getting documents', err);
   });
