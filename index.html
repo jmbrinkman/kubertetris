@@ -33,7 +33,7 @@
 </script>
 <script type="text/javascript">
 var db = firebase.firestore();
-var myMap = new Map();
+var highScoretable
 let highScores = db.collection('highScores')
 let top5Scores = highScores.orderBy('score','desc').limit(5).get()
 .then(snapshot => {
