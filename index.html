@@ -43,8 +43,8 @@ let top5Scores = highScores.orderBy('score','desc').limit(5).get()
     }  
     snapshot.forEach(doc => { 
       myMap.set(doc.get("nickName"),doc.get("score"));
-      JSON.stringify(myMap, null, 4);
-      console.log(myMap);
+      var newString = JSON.stringify(myMap, null, 4);
+      console.log(newString);
     });
   })
   .catch(err => {
