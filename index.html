@@ -33,7 +33,6 @@
 </script>
 <script type="text/javascript">
 var db = firebase.firestore();
-var highScoretable;
 var highScores = db.collection('highScores');
 var top5Scores = highScores.orderBy('score','desc').limit(5).get()
 .then(snapshot => {
@@ -42,6 +41,7 @@ var top5Scores = highScores.orderBy('score','desc').limit(5).get()
       return;
     }
     var table;
+    var highScoretable;
     table += "<table border='1'>";
     snapshot.forEach(doc => { 
       table += "<tr><td>" + doc.get("nickName") +" "+ doc.get("score") + "</td></tr>";
