@@ -40,7 +40,7 @@ var highScores = db.collection('highScores').orderBy('score','desc').limit(5).ge
       return;
     }
     var highScoretable = [];
-    highScoretable += "<table>";
+    highScoretable += "<table width=\"100%\">";
     snapshot.forEach(doc => { 
       highScoretable += "<tr><td>" + doc.get("nickName") +"</td><td> "+ doc.get("score") + "</td></tr>";
     });
