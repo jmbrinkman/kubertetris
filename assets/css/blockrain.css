@@ -1,25 +1,8 @@
 .body {
-  background-image: url("/assets/images/kubertetris2.png");
+  background-image: url("/assets/images/kubertetris3.png");
   background-size: cover;
   height: 98vh;
 }
-/* 
-@keyframes backgroundchange
-{
-  0%  {background-image: url('../images/backgrounds13.png');}
-  14%  {background-image: url('../images/backgrounds1.gif');}
-  18% {background-image: url('../images/backgrounds2.gif');}
-  27% {background-image: url('../images/backgrounds3.gif');}
-  36% {background-image: url('../images/backgrounds4.gif');}
-  45% {background-image: url('../images/backgrounds5.gif');}
-  54% {background-image: url('../images/backgrounds6.gif');}
-  63% {background-image: url('../images/backgrounds7.gif');}
-  72% {background-image: url('../images/backgrounds8.gif');}
-  81% {background-image: url('../images/backgrounds9.gif');}
-  90% {background-image: url('../images/backgrounds10.gif');}
-  100% {background-image: url('../images/backgrounds11.gif');}
-}  */
-
 .game{
   height: 93vh;
   width: 66vh;
