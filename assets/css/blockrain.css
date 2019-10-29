@@ -1,5 +1,5 @@
 .body {
-  background-image: '/assets/images/kubertetris.png';
+  background-image: url("/assets/images/kubertetris.png");
   height: 98vh;
 }
 /* 
