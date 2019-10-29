@@ -40,7 +40,6 @@ var top5Scores = highScores.orderBy('score','desc').limit(5).get()
       console.log('No matching documents.');
       return;
     }
-    var highScoretable;
     highScoretable += "<table border='1'>";
     snapshot.forEach(doc => { 
       highScoretable += "<tr><td>" + doc.get("nickName") +" "+ doc.get("score") + "</td></tr>";

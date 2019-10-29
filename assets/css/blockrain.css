@@ -1,12 +1,8 @@
 .body {
-  animation-name: backgroundchange;
-  animation-duration: 50s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: linear;
+  background-image: '/assets/images/kubertetris.png';
   height: 98vh;
 }
-
+/* 
 @keyframes backgroundchange
 {
   0%  {background-image: url('../images/backgrounds13.png');}
@@ -21,7 +17,7 @@
   81% {background-image: url('../images/backgrounds9.gif');}
   90% {background-image: url('../images/backgrounds10.gif');}
   100% {background-image: url('../images/backgrounds11.gif');}
-} 
+}  */
 
 .game{
   height: 93vh;
@@ -47,7 +43,7 @@
   font-size: 18px;
   line-height: 140%;
   border: 4px solid red;
-  width: 15%;
+  width: 20%;
   height: 20%;
 }
 
