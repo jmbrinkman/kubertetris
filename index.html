@@ -33,7 +33,7 @@
 </script>
 <script type="text/javascript">
 var db = firebase.firestore();
-var highScores = db.collection('highScores').orderBy('score','desc').limit(5).get
+var highScores = db.collection('highScores').orderBy('score','desc').limit(5).get()
 .then(snapshot => {
     if (snapshot.empty) {
       console.log('No matching documents.');

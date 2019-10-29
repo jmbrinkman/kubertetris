@@ -1,5 +1,6 @@
 .body {
   background-image: url("/assets/images/kubertetris.png");
+  background-size: cover;
   height: 98vh;
 }
 /* 
