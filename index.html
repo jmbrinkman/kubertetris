@@ -40,9 +40,9 @@ var highScores = db.collection('highScores').orderBy('score','desc').limit(5).ge
       return;
     }
     var highScoretable = [];
-    highScoretable += "<table border='1'>";
+    highScoretable += "<table>";
     snapshot.forEach(doc => { 
-      highScoretable += "<tr><td>" + doc.get("nickName") +" "+ doc.get("score") + "</td></tr>";
+      highScoretable += "<tr><td>" + doc.get("nickName") +"</td><td> "+ doc.get("score") + "</td></tr>";
     });
     highScoretable  += "</table>";
     document.querySelector('.blockrain-highscore-holder .nickName').innerHTML = highScoretable;
