@@ -1235,6 +1235,7 @@
       if( typeof this._theme.background === 'string' ) {
         this._$canvas.css('background-color', this._theme.background);
       }
+      this._$canvas.css('opacity', '0.3');
       this._$gameholder.append(this._$canvas);
 
       this._canvas = this._$canvas.get(0);
