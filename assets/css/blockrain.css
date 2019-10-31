@@ -1,11 +1,11 @@
 .body {
   background-image: url("/assets/images/kubertetris3.png");
   background-size: cover;
-  height: 98vh;
+  /*height: 98vh;*/
 }
 .game{
-  height: 93vh;
-  width: 66vh;
+  /*height: 95vh;*/
+  width: 70vh;
 }
 
 .blockrain-game-holder {

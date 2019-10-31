@@ -1232,10 +1232,9 @@
 
       // Create the game canvas and context
       this._$canvas = $('<canvas style="display:block; width:100%; height:100%; padding:0; margin:0; border:none;" />');
-     /* if( typeof this._theme.background === 'string' ) {
+      if( typeof this._theme.background === 'string' ) {
         this._$canvas.css('background-color', this._theme.background);
       }
-      */
       this._$gameholder.append(this._$canvas);
 
       this._canvas = this._$canvas.get(0);
