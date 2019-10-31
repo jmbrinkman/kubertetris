@@ -1,13 +1,12 @@
 .body {
   background-image: url("/assets/images/kubertetris3.png");
   background-size: cover;
-  /*height: 98vh;*/
+  height: 100vh;
 }
 .game{
-  /*height: 95vh;*/
+  height: 95vh;
   width: 70vh;
 }
-
 .blockrain-game-holder {
   position: relative;
   padding: 0;
@@ -16,7 +15,6 @@
   font-size: 18px;
   line-height: 140%;
 }
-
 .blockrain-highscore-holder {
   position: relative;
   float: left;
@@ -29,7 +27,6 @@
   width: 20%;
   height: 20%;
 }
-
 /* Touch Controls */
 .blockrain-touch {
   position: absolute;
