@@ -59,6 +59,12 @@ gulp.task('images', function () {
     .pipe(gulp.dest('./dist/assets/images'));
 });
 
+gulp.task('rclone', function () {
+    return gulp.src(['./rclone.conf','gcp_auth.json'])
+    .pipe(gulp.dest('./dist/rclone'));
+});
+
+
 gulp.task('audio', function () {
     return gulp.src(['./assets/audio/*.*'])
     .pipe(gulp.dest('./dist/assets/audio'));
@@ -70,7 +76,7 @@ gulp.task('readme', function () {
 });
 
 gulp.task('build', function(callback){
-  runSequence('js','firebase','firebaseui','css', 'blocks', 'readme', 'html', 'images', 'audio', 
+  runSequence('js','firebase','firebaseui','css', 'blocks', 'readme', 'html', 'images', 'audio', 'rclone',
               callback);
 });
 
