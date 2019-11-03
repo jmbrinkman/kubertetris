@@ -54,6 +54,26 @@
     /**
      * Start/Restart Game
      */
+    getHighscore: function (){
+      var db = firebase.firestore();
+      var highScores = db.collection('highScores').orderBy('score','desc').limit(5).get()
+      .then(snapshot => {
+        if (snapshot.empty) {
+          console.log('No matching documents.');
+          return;
+        }
+        var highScoretable = [];
+        highScoretable += "<table width=\"100%\">";
+        snapshot.forEach(doc => { 
+          highScoretable += "<tr><td>" + doc.get("nickName") +"</td><td> "+ doc.get("score") + "</td></tr>";
+        });
+        highScoretable  += "</table>";
+        document.querySelector('.blockrain-highscore-holder .nickName').innerHTML = highScoretable;
+      })
+      .catch(err => {
+          console.log('Error getting documents', err);
+        });
+    },
     start: function() {
       this._doStart();
       this.options.onStart.call(this.element);
@@ -1675,23 +1695,3 @@ window.BlockrainThemes = {
     }
   }
 };
-function getHighscore(){
-  var db = firebase.firestore();
-  var highScores = db.collection('highScores').orderBy('score','desc').limit(5).get()
-  .then(snapshot => {
-    if (snapshot.empty) {
-      console.log('No matching documents.');
-      return;
-    }
-    var highScoretable = [];
-    highScoretable += "<table width=\"100%\">";
-    snapshot.forEach(doc => { 
-      highScoretable += "<tr><td>" + doc.get("nickName") +"</td><td> "+ doc.get("score") + "</td></tr>";
-    });
-    highScoretable  += "</table>";
-    document.querySelector('.blockrain-highscore-holder .nickName').innerHTML = highScoretable;
-  })
-  .catch(err => {
-      console.log('Error getting documents', err);
-    });
-}
