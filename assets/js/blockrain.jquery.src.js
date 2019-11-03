@@ -1,13 +1,4 @@
-/*!
- * BlockRain.js 0.2.0
- * jQuery plugin that lets you put a playable (and configurable) game of Tetris in your site or just leave it in auto in the background.
- * http://aerolab.github.io/blockrain.js/
- *
- * Copyright (c) 2015 Aerolab <hey@aerolab.co>
- *
- * Released under the MIT license
- * http://aerolab.github.io/blockrain.js/LICENSE.txt
- */
+((function ( $ ) {
   "use strict";
   var nickName;
   $.widget('aerolab.blockrain', {
@@ -96,7 +87,7 @@
         .catch(function(error) {
           console.error("Error adding document: ", error);
         });
-        this.highScore();
+        highScore();
     },
 
     _doStart: function() {
