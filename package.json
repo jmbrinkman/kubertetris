@@ -5,13 +5,13 @@
   "main": "gulpfile.js",
   "devDependencies": {
     "fs": "0.0.1-security",
+    "gulp": "3.8.8",
     "gulp-cli": "^2.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-header": "^2.0.9",
-    "run-sequence": "^2.2.1",
-    "gulp": "3.8.8",
-    "gulp-uglify": "^1.5.4",
-    "jshint": "^2.10.2"
+    "gulp-uglify-es": "^2.0.0",
+    "jshint": "^2.10.2",
+    "run-sequence": "^2.2.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/jmbrinkman/kubertetris/issues"
   },
-  "homepage": "https://github.com/jmbrinkman/kubertetris#readme"
+  "homepage": "https://github.com/jmbrinkman/kubertetris#readme",
+  "dependencies": {
+    "uglify-es": "^3.3.9"
+  }
 }

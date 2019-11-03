@@ -1,10 +1,10 @@
-var gulp = require('gulp'),
-fs = require('fs'),
-uglify = require("gulp-uglify"),
-concat = require("gulp-concat"),
-header = require("gulp-header"),
+var gulp = require('gulp');
+fs = require('fs');
+concat = require("gulp-concat");
+header = require("gulp-header");
 runSequence = require('run-sequence');
- 
+let uglify = require('gulp-uglify-es').default;
+
 var getVersion = function () {
     info = require("./package.json");
     return info.version;
@@ -18,7 +18,6 @@ gulp.task('js', function () {
     .pipe(concat('blockrain.jquery.js'))
     .pipe(header(getCopyright(), {version: getVersion()}))
     .pipe(gulp.dest('./dist/assets/js'))
-    .pipe(uglify({preserveComments:'none'}))
     .pipe(concat('blockrain.jquery.min.js'))
     .pipe(header(getCopyright(), {version: getVersion()}))
     .pipe(gulp.dest('./dist/assets/js'));
@@ -28,7 +27,6 @@ gulp.task('firebase', function () {
     return gulp.src(['./assets/js/firebase.config.js'])
     .pipe(concat('firebase.config.js'))
     .pipe(gulp.dest('./dist/assets/js'))
-    .pipe(uglify({preserveComments:'none'}))
     .pipe(concat('firebase.config.min.js'))
     .pipe(gulp.dest('./dist/assets/js'));
 });
@@ -37,7 +35,6 @@ gulp.task('firebaseui', function () {
     return gulp.src(['./assets/js/firebaseui.config.js'])
     .pipe(concat('firebaseui.config.js'))
     .pipe(gulp.dest('./dist/assets/js'))
-    .pipe(uglify({preserveComments:'none'}))
     .pipe(concat('firebaseui.config.min.js'))
     .pipe(gulp.dest('./dist/assets/js'));
 });
@@ -50,11 +47,6 @@ gulp.task('css', function () {
 gulp.task('blocks', function () {
     return gulp.src(['./assets/blocks/custom/*.*'])
     .pipe(gulp.dest('./dist/assets/blocks/custom'));
-});
-
-gulp.task('rclone', function () {
-    return gulp.src(['./rclone.conf','gcp_auth.json'])
-    .pipe(gulp.dest('./dist/rclone'));
 });
 
 gulp.task('html', function () {
@@ -78,7 +70,7 @@ gulp.task('readme', function () {
 });
 
 gulp.task('build', function(callback){
-  runSequence('js','firebase','firebaseui','css', 'blocks', 'readme', 'html', 'images', 'audio', 'rclone' , 
+  runSequence('js','firebase','firebaseui','css', 'blocks', 'readme', 'html', 'images', 'audio', 
               callback);
 });
 
