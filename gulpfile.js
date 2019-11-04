@@ -1,8 +1,8 @@
-var gulp = require('gulp');
-fs = require('fs');
-concat = require("gulp-concat");
-header = require("gulp-header");
-runSequence = require('run-sequence');
+let gulp = require('gulp');
+let fs = require('fs');
+let concat = require("gulp-concat");
+let header = require("gulp-header");
+let runSequence = require('run-sequence');
 let uglify = require('gulp-uglify-es').default;
 
 var getVersion = function () {

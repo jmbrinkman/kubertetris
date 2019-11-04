@@ -22,10 +22,12 @@ body {
 }
 .blockrain-highscore-holder {
   position: relative;
+  background: rgba(255,255,255,0.4);
+  border-radius: 25px;
   float: left;
   padding: 0;
   margin: 0;
-  color: #ffffff;
+  color: rgba(245,0,0,1);
   font-size: 32px;
   font-family: 'Fira Sans';
   line-height: 140%;

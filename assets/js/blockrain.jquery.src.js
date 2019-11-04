@@ -16,7 +16,7 @@
       asdwKeys: true, // Enable ASDW keys
 
       // Copy
-      playText: 'Let\'s play KUBERTETRIS!',
+      playText: 'Let\'s play \nKUBERTETRIS!',
       playButtonText: 'kubectl run',
       gameOverText: 'Game Over',
       restartButtonText: 'Ctrl+Alt+Delete',
@@ -48,7 +48,7 @@
       return;
       }
       var highScoretable = [];
-      highScoretable += "<table width=\"100%\">";
+      highScoretable += "<table width=\"100%\"><tr><td>NICKNAME</td><td>SCORE</td></tr>";
       snapshot.forEach(doc => { 
         highScoretable += "<tr><td>" + doc.get("nickName") +"</td><td> "+ doc.get("score") + "</td></tr>";
         });
