@@ -242,6 +242,8 @@
 
       var game = this;
 
+      this.highScore();
+
       this.theme(this.options.theme);
 
       this._createHolder();
