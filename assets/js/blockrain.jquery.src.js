@@ -87,7 +87,7 @@
         .catch(function(error) {
           console.error("Error adding document: ", error);
         });
-        highScore();
+        this.highScore();
     },
 
     _doStart: function() {
