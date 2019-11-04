@@ -27,12 +27,12 @@ body {
   float: left;
   padding: 0;
   margin: 0;
-  color: rgba(245,0,0,1);
-  font-size: 32px;
+  color: white; 
+  font-size: 30px;
   font-family: 'Fira Sans';
   line-height: 140%;
   width: 20%;
-  height: 20%;
+  height: 18%;
 }
 /* Touch Controls */
 .blockrain-touch {
@@ -42,7 +42,7 @@ body {
   display: block;
   border-radius: 100%;
   border: 1px solid white;
-  background: rgba(255,255,255,0);
+  background: rgba(255,255,255,0.2);
   z-index: 100;
 
   touch-callout: none;
@@ -55,7 +55,7 @@ body {
   text-align: center;
 }
 .blockrain-touch:active {
-  background: rgba(255,255,255,0);
+  background: rgba(255,255,255,0.3);
 }
 
 .blockrain-touch-left {
@@ -174,7 +174,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,0);
+  background: rgba(0,0,0,0.8);
   text-align: center;
 }
 .blockrain-start, .blockrain-game-over {

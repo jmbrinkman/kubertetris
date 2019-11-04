@@ -18,6 +18,7 @@ gulp.task('js', function () {
     .pipe(concat('blockrain.jquery.js'))
     .pipe(header(getCopyright(), {version: getVersion()}))
     .pipe(gulp.dest('./dist/assets/js'))
+    .pipe(uglify())
     .pipe(concat('blockrain.jquery.min.js'))
     .pipe(header(getCopyright(), {version: getVersion()}))
     .pipe(gulp.dest('./dist/assets/js'));
@@ -27,6 +28,7 @@ gulp.task('firebase', function () {
     return gulp.src(['./assets/js/firebase.config.js'])
     .pipe(concat('firebase.config.js'))
     .pipe(gulp.dest('./dist/assets/js'))
+    .pipe(uglify())
     .pipe(concat('firebase.config.min.js'))
     .pipe(gulp.dest('./dist/assets/js'));
 });
@@ -35,6 +37,7 @@ gulp.task('firebaseui', function () {
     return gulp.src(['./assets/js/firebaseui.config.js'])
     .pipe(concat('firebaseui.config.js'))
     .pipe(gulp.dest('./dist/assets/js'))
+    .pipe(uglify())
     .pipe(concat('firebaseui.config.min.js'))
     .pipe(gulp.dest('./dist/assets/js'));
 });
