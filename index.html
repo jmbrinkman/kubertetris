@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
   <link rel="stylesheet" href="assets/css/blockrain.css">
-  <link rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.css" />
+  <link rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.css">
   <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-analytics.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-auth.js"></script>
@@ -14,21 +15,25 @@
   <script src="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.js"></script>
   <script src="assets/js/firebaseui.config.min.js"></script>
 </head>
+
 <body>
-    <div class="blockrain-highscore-holder">
-      <span class='nickName'></span>
-    </div>
-    <div id="firebaseui-auth-container"></div>
-    <center><div class="game"></div></center>
-<script>
-  firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    document.getElementById("firebaseui-auth-container").style.display = "none";
-    $('.game').blockrain({
-    theme: 'custom'
+  <div class="blockrain-highscore-holder">
+    <span class='nickName'></span>
+  </div>
+  <div id="firebaseui-auth-container"></div>
+  <center>
+    <div class="game"></div>
+  </center>
+  <script>
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        document.getElementById("firebaseui-auth-container").style.display = "none";
+        $('.game').blockrain({
+          theme: 'custom'
+        });
+      }
     });
-  }
-});
-</script>
+  </script>
 </body>
+
 </html>
