@@ -12,17 +12,4 @@ firebase.initializeApp(firebaseConfig);
 firebase.firestore();
 firebase.analytics();
 firebase.auth();
-
 firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
-.then(function() {
-  var provider = new firebase.auth.GoogleAuthProvider();
-  // In memory persistence will be applied to the signed in Google user
-  // even though the persistence was set to 'none' and a page redirect
-  // occurred.
-  return firebase.auth().signInWithRedirect(provider);
-})
-.catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-});
