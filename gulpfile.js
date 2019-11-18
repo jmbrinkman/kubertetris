@@ -1,9 +1,9 @@
-let gulp = require('gulp');
-let fs = require('fs');
-let concat = require("gulp-concat");
-let header = require("gulp-header");
-let runSequence = require('run-sequence');
-let uglify = require('gulp-uglify-es').default;
+var gulp = require('gulp');
+var fs = require('fs');
+var concat = require("gulp-concat");
+var header = require("gulp-header");
+var runSequence = require('run-sequence');
+var uglify = require('gulp-uglify-es').default;
 
 var getVersion = function () {
     info = require("./package.json");
