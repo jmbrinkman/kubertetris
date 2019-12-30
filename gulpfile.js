@@ -57,7 +57,7 @@ gulp.task('blocks', function () {
 });
 
 gulp.task('html', function () {
-    return gulp.src(['./*.*'])
+    return gulp.src(['./index.html'])
         .pipe(gulp.dest('./dist'));
 });
 
@@ -77,13 +77,8 @@ gulp.task('audio', function () {
         .pipe(gulp.dest('./dist/assets/audio'));
 });
 
-gulp.task('readme', function () {
-    return gulp.src(['./README.md'])
-        .pipe(gulp.dest('./dist'));
-});
-
 gulp.task('build', function (callback) {
-    runSequence('js', 'firebase', 'firebaseui', 'css', 'blocks', 'readme', 'html', 'images', 'audio', 'rclone',
+    runSequence('js', 'firebase', 'firebaseui', 'css', 'blocks', 'html', 'images', 'audio', 'rclone',
         callback);
 });
 
