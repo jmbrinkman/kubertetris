@@ -1,0 +1,66 @@
+# Node.js with gulp
+# Build a Node.js project using the gulp task runner.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- porsche
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+
+- task: NodeTool@0 
+  inputs:
+    versionSpec: '11.6.0' # replace this value with the version that you need for your project
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your PowerShell commands here.
+      $String = @" 
+      [gcp]
+      type = google cloud storage
+      project_number = $(gcp_project_number)
+      service_account_file = _jmbrinkman.kubertetris/dist/rclone/gcp_auth.json
+      bucket_policy_only = true
+      "@
+      Set-Content -Path 'rclone.conf' -Value $String
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      $String = @"
+      {
+        "type": "service_account",  
+        "project_id": "$(gcp_project_id)",
+        "private_key_id": "$(gcp_private_key_id)",
+        "private_key": "$(gcp_private_key)",
+        "client_email": "$(gcp_client_email)",
+        "client_id": "$(gcp_client_id)",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_x509_cert_url": "$(gcp_client_x509_cert_url)"
+      }
+      "@
+      Set-Content -Path 'gcp_auth.json' -Value $String
+     
+- task: Npm@1
+  inputs:
+    command: 'install'
+
+- task: Gulp@1
+  inputs:
+    gulpFile: 'gulpfile.js'
+    enableCodeCoverage: false
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/dist'
+    ArtifactName: 'porsche'
+    publishLocation: 'Container'
+
