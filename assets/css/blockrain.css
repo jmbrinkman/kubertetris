@@ -7,9 +7,10 @@ body {
   /*background: -webkit-linear-gradient(rgba(245, 0, 0, 1) 0%, rgba(172, 0, 232, 1) 50%, rgb(0, 128, 255, 1));
   background: -moz-linear-gradient(rgba(245, 0, 0, 1) 0%, rgba(172, 0, 232, 1) 50%, rgb(0, 128, 255, 1));
   background: -o-linear-gradient(rgba(245, 0, 0, 1) 0%, rgba(172, 0, 232, 1) 50%, rgb(0, 128, 255, 1));
-  margin: 0;*/
-  /*height: 98vh;*/
+  margin: 0;
+  height: 98vh;*/
 }
+
 
 .game {
   height: 95vh;
