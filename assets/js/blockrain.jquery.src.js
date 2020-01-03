@@ -41,7 +41,7 @@
      */
     highScore: function () {
       var db = firebase.firestore();
-      var highScores = db.collection('highScores').orderBy('score', 'desc').limit(5).get()
+      var highScores_porsche = db.collection('highScores_porsche').orderBy('score', 'desc').limit(5).get()
         .then(snapshot => {
           if (snapshot.empty) {
             console.log('No matching documents.');
@@ -74,10 +74,10 @@
       this._board.gameover = true;
       this.options.onGameOver.call(this.element, this._filled.score);
 
-      // Add a new document in collection "highScores" with the score details
+      // Add a new document in collection "highScores_porsche" with the score details
       var db = firebase.firestore();
       this.options.onGameOver.call(this.element, this._filled.score);
-      db.collection("highScores").add({
+      db.collection("highScores_porsche").add({
           nickName: nickName,
           score: this._filled.score
         })
