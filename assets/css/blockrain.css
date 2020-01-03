@@ -23,7 +23,7 @@ body {
   position: relative;
   padding: 0;
   margin: 0;
-  color: rgba(235, 0, 0, 0);
+  color: rgba(235, 0, 0, 1);
   font-size: 18px;
   line-height: 140%;
 }
@@ -121,7 +121,7 @@ body {
   background: none;
   color: rgba(235, 0, 0, 0);
   text-decoration: none;
-  border: 2px solid rgba(235, 0, 0, 0);
+  border: 2px solid rgba(235, 0, 0, 1);
   padding: 15px 30px;
   font-size: 18px;
   text-align: center;
@@ -135,7 +135,7 @@ body {
   left: 0px;
   bottom: 0px;
   right: 0px;
-  border: 2px solid rgba(235, 0, 0, 0);
+  border: 2px solid rgba(235, 0, 0, 1);
   border-top: none;
   border-right: none;
   transition: all 0.2s ease;
@@ -148,7 +148,7 @@ body {
   left: 100%;
   bottom: 0px;
   right: 0px;
-  border: 2px solid rgba(235, 0, 0, 0);
+  border: 2px solid rgba(235, 0, 0, 1);
   border-left: none;
   border-bottom: none;
   transition: all 0.2s ease;
