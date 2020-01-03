@@ -23,7 +23,7 @@ body {
   position: relative;
   padding: 0;
   margin: 0;
-  color: #ffffff;
+  color: rgba(235, 0, 0, 0);
   font-size: 18px;
   line-height: 140%;
 }
@@ -35,7 +35,7 @@ body {
   float: left;
   padding: 0;
   margin: 0;
-  color: white;
+  color: rgba(235, 0, 0, 0);
   font-size: 30px;
   font-family: 'Fira Sans';
   line-height: 140%;
@@ -119,9 +119,9 @@ body {
   position: relative;
   display: inline-block;
   background: none;
-  color: #ffffff;
+  color: rgba(235, 0, 0, 0);
   text-decoration: none;
-  border: 2px solid #ffffff;
+  border: 2px solid rgba(235, 0, 0, 0);
   padding: 15px 30px;
   font-size: 18px;
   text-align: center;
@@ -135,7 +135,7 @@ body {
   left: 0px;
   bottom: 0px;
   right: 0px;
-  border: 2px solid #ffffff;
+  border: 2px solid rgba(235, 0, 0, 0);
   border-top: none;
   border-right: none;
   transition: all 0.2s ease;
@@ -148,7 +148,7 @@ body {
   left: 100%;
   bottom: 0px;
   right: 0px;
-  border: 2px solid #ffffff;
+  border: 2px solid rgba(235, 0, 0, 0);
   border-left: none;
   border-bottom: none;
   transition: all 0.2s ease;
