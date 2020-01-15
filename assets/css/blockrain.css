@@ -30,7 +30,7 @@ body {
 
 .blockrain-highscore-holder {
   position: relative;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 25px;
   float: left;
   padding: 0;
