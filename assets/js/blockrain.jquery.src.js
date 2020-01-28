@@ -1343,9 +1343,12 @@
         '<a class="blockrain-btn blockrain-game-over-btn">' + this.options.restartButtonText + '</a>' +
         '</div>' +
         '</div>').hide();
+       
       game._$gameover.find('.blockrain-game-over-btn').click(function (event) {
         nickName = document.getElementById("nickname").value;
+        console.log(nickName);
         event.preventDefault();
+        backgroundaudio.play();
         game.restart();
       });
       game._$gameholder.append(game._$gameover);
