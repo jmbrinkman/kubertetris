@@ -1326,9 +1326,9 @@
         '</div>' +
         '</div>').hide();
       game._$gameholder.append(game._$start);
-
+        
       game._$start.find('.blockrain-start-btn').click(function (event) {
-        nickName = document.getElementById("nickname").value
+        nickName = document.getElementById("nickname").value;
         event.preventDefault();
         backgroundaudio.play();
         game.start();
@@ -1344,6 +1344,7 @@
         '</div>' +
         '</div>').hide();
       game._$gameover.find('.blockrain-game-over-btn').click(function (event) {
+        nickName = document.getElementById("nickname").value;
         event.preventDefault();
         game.restart();
       });
@@ -1601,11 +1602,11 @@
           case 38:
             /*up*/ game._board.cur.rotate('right');
             break;
-          case 88:
-            /*x*/ game._board.cur.rotate('right');
+          case 17:
+            /*alt*/ game._board.cur.rotate('right');
             break;
-          case 90:
-            /*z*/ game._board.cur.rotate('left');
+          case 18:
+            /*ctrl*/ game._board.cur.rotate('left');
             break;
           default:
             caught = false;
