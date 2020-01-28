@@ -1321,14 +1321,14 @@
         '<div class="blockrain-start">' +
         '<div class="blockrain-start-msg">' + this.options.playText + '</div>' + '<br>' +
         // Think about this div, make it prettier
-        '<div class="blockrain-nickname-box">' + '<input type="text" id="nickname" />' + '</div>' +
+        '<div class="blockrain-nickname-box">' + '<input type="text" id="nickname_start" />' + '</div>' +
         '<a class="blockrain-btn blockrain-start-btn">' + this.options.playButtonText + '</a>' +
         '</div>' +
         '</div>').hide();
       game._$gameholder.append(game._$start);
         
       game._$start.find('.blockrain-start-btn').click(function (event) {
-        nickName = document.getElementById("nickname").value;
+        nickName = document.getElementById("nickname_start").value;
         event.preventDefault();
         backgroundaudio.play();
         game.start();
@@ -1339,13 +1339,13 @@
         '<div class="blockrain-game-over-holder" style="position:absolute;">' +
         '<div class="blockrain-game-over">' +
         '<div class="blockrain-game-over-msg">' + this.options.gameOverText + '</div>' + '<br>' +
-        '<div class="blockrain-nickname-box">' + '<input type="text" id="nickname" />' + '</div>' +
+        '<div class="blockrain-nickname-box">' + '<input type="text" id="nickname_restart" />' + '</div>' +
         '<a class="blockrain-btn blockrain-game-over-btn">' + this.options.restartButtonText + '</a>' +
         '</div>' +
         '</div>').hide();
        
       game._$gameover.find('.blockrain-game-over-btn').click(function (event) {
-        nickName = document.getElementById("nickname").value;
+        nickName = document.getElementById("nickname_restart").value;
         console.log(nickName);
         event.preventDefault();
         backgroundaudio.play();
