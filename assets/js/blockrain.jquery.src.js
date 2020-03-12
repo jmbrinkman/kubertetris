@@ -27,8 +27,6 @@
       onRestart: function () {},
       onGameOver: function (score) {},
 
-
-
       // When a block is placed
       onPlaced: function () {},
       // When a line is made. Returns the number of lines, score assigned and total score
@@ -75,12 +73,11 @@
       this.options.onGameOver.call(this.element, this._filled.score);
 
       // Add a new document in collection "highScores" with the score details
-      var currentUser = firebase.auth().currentUser;
-      console.log(currentUser);
+      console.log(user);
       var db = firebase.firestore();
       this.options.onGameOver.call(this.element, this._filled.score);
       db.collection("highScores").add({
-          nickName: currentUser.displayName,
+          nickName: user.displayName,
           score: this._filled.score
         })
         .then(function (docRef) {
