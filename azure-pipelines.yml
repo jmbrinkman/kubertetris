@@ -23,7 +23,7 @@ steps:
       $String = @" 
       [gcp]
       type = google cloud storage
-      project_number = $(gcp_project_number)
+      project_number = $(gcp_project_number1)
       service_account_file = _jmbrinkman.kubertetris/dist/rclone/gcp_auth.json
       bucket_policy_only = true
       "@
@@ -36,15 +36,15 @@ steps:
       $String = @"
       {
         "type": "service_account",  
-        "project_id": "$(gcp_project_id)",
-        "private_key_id": "$(gcp_private_key_id)",
-        "private_key": "$(gcp_private_key)",
-        "client_email": "$(gcp_client_email)",
-        "client_id": "$(gcp_client_id)",
+        "project_id": "$(gcp_project_id1)",
+        "private_key_id": "$(gcp_private_key_id1)",
+        "private_key": "$(gcp_private_key1)",
+        "client_email": "$(gcp_client_email1)",
+        "client_id": "$(gcp_client_id1)",
         "auth_uri": "https://accounts.google.com/o/oauth2/auth",
         "token_uri": "https://oauth2.googleapis.com/token",
         "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-        "client_x509_cert_url": "$(gcp_client_x509_cert_url)"
+        "client_x509_cert_url": "$(gcp_client_x509_cert_url1)"
       }
       "@
       Set-Content -Path 'gcp_auth.json' -Value $String
