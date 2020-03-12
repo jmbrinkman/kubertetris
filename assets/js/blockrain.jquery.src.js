@@ -77,9 +77,10 @@
       this.options.onGameOver.call(this.element, this._filled.score);
       firebase.auth().onAuthStateChanged(function (user) {
         var currentUser = user;
+        console.log(currentUser);
       });
       db.collection("highScores").add({
-          nickName: user.displayName,
+          nickName: currentUser.displayName,
           score: this._filled.score
         })
         .then(function (docRef) {
