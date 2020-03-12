@@ -5,7 +5,6 @@ var uiConfig = {
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
   ]
 };
-
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 // The start method will wait until the DOM is loaded.

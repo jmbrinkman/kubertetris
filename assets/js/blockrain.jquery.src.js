@@ -78,7 +78,7 @@
       var db = firebase.firestore();
       this.options.onGameOver.call(this.element, this._filled.score);
       db.collection("highScores").add({
-          nickName: nickName,
+          nickName: firebase.User.displayName,
           score: this._filled.score
         })
         .then(function (docRef) {
@@ -1321,14 +1321,14 @@
         '<div class="blockrain-start">' +
         '<div class="blockrain-start-msg">' + this.options.playText + '</div>' + '<br>' +
         // Think about this div, make it prettier
-        '<div class="blockrain-nickname-box">' + '<input type="text" id="nickname" />' + '</div>' +
+//        '<div class="blockrain-nickname-box">' + '<input type="text" id="nickname" />' + '</div>' +
         '<a class="blockrain-btn blockrain-start-btn">' + this.options.playButtonText + '</a>' +
         '</div>' +
         '</div>').hide();
       game._$gameholder.append(game._$start);
 
       game._$start.find('.blockrain-start-btn').click(function (event) {
-        nickName = document.getElementById("nickname").value
+        nickName = 
         event.preventDefault();
         backgroundaudio.play();
         game.start();
