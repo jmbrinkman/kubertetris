@@ -76,7 +76,7 @@
       var db = firebase.firestore();
       this.options.onGameOver.call(this.element, this._filled.score);
       db.collection("highScores").add({
-          nickName: currentUser.displayName,
+          nickName: user.displayName,
           score: this._filled.score
         })
         .then(function (docRef) {
