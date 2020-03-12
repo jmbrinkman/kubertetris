@@ -73,9 +73,11 @@
       this.options.onGameOver.call(this.element, this._filled.score);
 
       // Add a new document in collection "highScores" with the score details
-      console.log(user);
       var db = firebase.firestore();
       this.options.onGameOver.call(this.element, this._filled.score);
+      firebase.auth().onAuthStateChanged(function (user) {
+        var currentUser = user;
+      });
       db.collection("highScores").add({
           nickName: user.displayName,
           score: this._filled.score
