@@ -18,6 +18,13 @@
 </head>
 
 <body>
+    <script>
+        var ua = detect.parse(navigator.userAgent);
+        if (ua.browser.family =! "Chrome")
+        {
+          document.write("<p>Unfortunately Kubertetris is not supported on Mobile and only fully functional on Google Chrome!</p>")
+        }
+        </script>
   <div class="blockrain-highscore-holder">
     <span class='nickName'></span>
   </div>
@@ -35,13 +42,6 @@
       }
     });
   </script>  
-  <script>
-    var ua = detect.parse(navigator.userAgent);
-    if (ua.browser.family =! "Chrome")
-    {
-      document.write("<p>Unfortunately Kubertetris is not supported on Mobile and only fully functional on Google Chrome!</p>")
-    }
-    </script>
 </body>
 
 </html>
