@@ -1327,7 +1327,6 @@
       game._$gameholder.append(game._$start);
 
       game._$start.find('.blockrain-start-btn').click(function (event) {
-        nickName = 
         event.preventDefault();
         backgroundaudio.play();
         game.start();
@@ -1338,7 +1337,7 @@
         '<div class="blockrain-game-over-holder" style="position:absolute;">' +
         '<div class="blockrain-game-over">' +
         '<div class="blockrain-game-over-msg">' + this.options.gameOverText + '</div>' + '<br>' +
-        '<div class="blockrain-nickname-box">' + '<input type="text" id="nickname" />' + '</div>' +
+       // '<div class="blockrain-nickname-box">' + '<input type="text" id="nickname" />' + '</div>' +
         '<a class="blockrain-btn blockrain-game-over-btn">' + this.options.restartButtonText + '</a>' +
         '</div>' +
         '</div>').hide();
