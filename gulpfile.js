@@ -87,7 +87,7 @@ gulp.task('audio', function () {
 });
 
 gulp.task('build', function (callback) {
-    runSequence('js', 'firebase', 'firebaseui', 'css', 'blocks', 'html', 'images', 'audio', 'rclone', 'detect'
+    runSequence('js', 'firebase', 'firebaseui', 'css', 'blocks', 'html', 'images', 'audio', 'rclone', 'detect' ,
         callback);
 });
 
