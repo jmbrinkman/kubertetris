@@ -46,6 +46,15 @@ gulp.task('firebaseui', function () {
         .pipe(gulp.dest('./dist/assets/js'));
 });
 
+gulp.task('detect', function () {
+    return gulp.src(['./assets/js/detect.js'])
+        .pipe(concat('detect.js'))
+        .pipe(gulp.dest('./dist/assets/js'))
+        .pipe(uglify())
+        .pipe(concat('detect.min.js'))
+        .pipe(gulp.dest('./dist/assets/js'));
+});
+
 gulp.task('css', function () {
     return gulp.src(['./assets/css/blockrain.css'])
         .pipe(gulp.dest('./dist/assets/css/'));
