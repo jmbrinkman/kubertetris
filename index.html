@@ -37,9 +37,9 @@
   </script>  
   <script>
     var ua = detect.parse(navigator.userAgent);
-    if ((ua.browser.family =! "Chrome") || (ua.device.type == "Mobile" ))
+    if (ua.browser.family =! "Chrome")
     {
-      document.write("Unfortunately Kubertetris is not supported on Mobile and only fully functional on Google Chrome!")
+      document.write("<p>Unfortunately Kubertetris is not supported on Mobile and only fully functional on Google Chrome!</p>")
     }
     </script>
 </body>
