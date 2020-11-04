@@ -16,9 +16,9 @@
   <script src="assets/js/firebaseui.config.min.js"></script>
   <script src="assets/js/detect.min.js"></script>
   <script src="https://www.datadoghq-browser-agent.com/datadog-logs.js"></script>
+  <script src="https://www.datadoghq-browser-agent.com/datadog-rum.js"></script>
 </head>
   <script>
-    // Create more noise and more
         DD_LOGS.init({
         clientToken: 'pubb8273dd6945a22112454d5fa5984004d',
         site: 'datadoghq.eu',
@@ -26,6 +26,18 @@
         sampleRate: 100,
     });
   </script>
+  <script>
+    window.DD_RUM && window.DD_RUM.init({
+        applicationId: 'a2492a4d-2492-4513-8527-6db3767d19b9',
+        clientToken: 'pub975e25d8f6ec56d749155556e7f0bbf5',
+        site: 'datadoghq.eu',
+        service: 'kubertetris',
+        env: 'production',
+        version: '1.0.0',
+        sampleRate: 100,
+        trackInteractions: true
+    });
+</script>
 <body>
 
   <div class="blockrain-highscore-holder">
