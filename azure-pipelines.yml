@@ -17,6 +17,10 @@ steps:
 
 - task: PowerShell@2
   inputs:
+    filePath: 'dynatrace.ps1'
+    arguments: '"https://mfk45490.live.dynatrace.com/" P_HDmZbFR_a3dBASZdGYA production Kubertetris'
+- task: PowerShell@2
+  inputs:
     targetType: 'inline'
     script: |
       # Write your PowerShell commands here.
