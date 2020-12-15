@@ -30,7 +30,7 @@ $REQUEST_BODY=@"
     "eventType" : "CUSTOM_DEPLOYMENT",
     "deploymentName" : "$DEPLOYMENT_NAME",
     "source" : "$SOURCE",
-    "deploymentVersion" : "$DEPLOYMENT_VERSION"  ,
+    "deploymentVersion" : "1"  ,
     "deploymentProject" : "$DEPLOYMENT_PROJECT" ,
     "ciBackLink" : "$CI_BACKLINK",
     "attachRules" : 
