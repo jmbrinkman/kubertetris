@@ -30,31 +30,19 @@ $REQUEST_BODY=@"
     "eventType" : "CUSTOM_DEPLOYMENT",
     "deploymentName" : "$DEPLOYMENT_NAME",
     "source" : "$SOURCE",
-    "deploymentVersion" : "$DEPLOYMENT_VERSION"  ,
+    "deploymentVersion" : "1"  ,
     "deploymentProject" : "$DEPLOYMENT_PROJECT" ,
     "ciBackLink" : "$CI_BACKLINK",
-    "attachRules" : {
-            "tagRule" : [
-                {
-                    "meTypes":"SERVICE" ,
-                    "tags" : [
-                        {
-                            "context" : "CONTEXTLESS",
-                            "key": "environment",
-                            "value" : "$TAG_VALUE_ENVIRONMENT"    
-                        },
-                        {
-                            "context" : "CONTEXTLESS",
-                            "key": "Application",
-                            "value" : "$TAG_VALUE_APPLICATION"    
-                        }
-                        ]
-                }
-                ]
-    }
+    "attachRules" : 
+        {
+           "entityIds": "APPLICATION-6BDE8A31A3363FDD"
+        }
 }
 "@
 $HEADERS = @{ Authorization = "Api-Token $DYNATRACE_API_TOKEN" }
+
+
+
 
 Write-Host "==============================================================="
 Write-Host "DEPLOYMENT_PROJECT    : "$DEPLOYMENT_PROJECT
